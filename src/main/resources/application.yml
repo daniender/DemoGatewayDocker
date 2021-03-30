@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: zuul-service
+ 
+#Tomcat Embedded Server Configuration
+server:
+  port: 8762
+ 
+#Zuul Configuration Properties
+zuul:
+  routes:
+      serv-greet:
+        path: /task-service/**
+        serviceId: task-microservice
+ 
+#Eureka Configuration Properties
+eureka: 
+  client:
+    serviceUrl:
+      defaultZone: http://eureka-server:8761/eureka
